@@ -1,0 +1,66 @@
+body{ 
+    font-family:'Roboto', sans-serif;
+    background-color: #363535;
+}
+
+#welcome{
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.start{
+    margin-top: 2px;
+}
+
+#navbarSupportedContent a:hover{
+    background-color: #e0e8e9;
+}
+
+#logo{
+    width: 35px;
+}
+
+.bg-light{
+    background-color: #fafafa;
+}
+
+.navbar-brand{
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 1.5rem;
+    color: #5f6368;
+    padding-left: 0.5vw;
+}
+
+
+.nav-link{
+    color: #5f6368;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.nav-link:hover{
+    background-color: #f3f1f1;
+}
+
+.my-info{
+    padding: 2rem 5rem;
+}
+
+#table_topic{
+    background-color: #42d16d;
+}
+
+.table-danger, .table-danger>td, .table-danger>th {
+    background-color: rgb(40, 163, 200);
+}
+
+.table-hover .table-danger:hover>th {
+    background-color: rgb(110, 85, 20);
+}
+
+.table-light, .table-light>td, .table-light>th {
+    background-color: rgb(190, 186, 186);
+}
+.table-hover .table-light:hover>td{
+    background-color: #7a7573;
+}

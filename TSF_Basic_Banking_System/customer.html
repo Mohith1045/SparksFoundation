@@ -1,0 +1,206 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View All Customers</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img id="logo" src="asset/logo.png">
+        <a class="navbar-brand center" href="index.html">LinkedIn Bank</a>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto" id="navbar_right">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home Page</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="customer.html">View Transactions</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="my-info text-center">
+        
+        <h2 style="color: rgb(249, 101, 22); margin-bottom: 15px;">Transfer Amount</h2>
+        <button class="btn btn-success" data-toggle="modal" data-target="#sendMoney">Send Money</button>
+        <a class="btn btn-danger" href="" data-toggle="modal" data-target="#transactionHistory">View All Transactions</a>
+    </div>
+    
+    <div class="modal fade" id="sendMoney" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">  
+                    <h5 class="modal-title" id="exampleModalLabel">Send Money</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterDonorName" class="form-control" placeholder="Donor's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" id="enterRecipientName" class="form-control" placeholder="Recipient's username"
+                                aria-label="Recipient's username" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="basic-addon2">@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text">₹</span>
+                            </div>
+                            <input type="text" id="enterAmount" class="form-control" placeholder=" Enter Amount"
+                                aria-label="Amount (to the nearest dollar)">
+                            <div class="input-group-append">
+                                <span class="input-group-text">.00</span>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" onclick="sendMoney()" class="btn btn-success" data-dismiss="modal">Send
+                        Money</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="transactionHistory" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Transaction History</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="transaction-history-body">
+
+                    </ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead id="table_topic">
+                    <tr class="table-primary">
+                        <th scope="col">SI.No</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">User Id</th>
+                        <th scope="col">Bank Balance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-light">
+                        <td scope="row">1</td>
+                        <td scope="row">Cillian Murphy</td>
+                        <td scope="row">murphy@gmail.com</td>
+                        <td>
+                            <p id="murphyBankBalance">130000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">2</td>
+                        <td scope="row">Chris Nolan</td>
+                        <td scope="row">nolan@gmail.com</td>
+                        <td>
+                            <p id="nolanBankBalance">150000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">3</td>
+                        <td scope="row">Matt Damon</td>
+                        <td scope="row">damon@gmail.com</td>
+                        <td>
+                            <p id="damonBankBalance">120000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">4</td>
+                        <td scope="row">Emily Blunt</td>
+                        <td scope="row">emily@gmail.com</td>
+                        <td>
+                            <p id="emilyBankBalance">70000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">5</td>
+                        <td scope="row">Robert Downey</td>
+                        <td scope="row">robert@gmail.com</td>
+                        <td>
+                            <p id="robertBankBalance">90000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">6</td>
+                        <td scope="row">Margot Robbie</td>
+                        <td scope="row">margot@gmail.com</td>
+                        <td>
+                            <p id="margotankBalance">110000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">7</td>
+                        <td scope="row">Ryan Gosling</td>
+                        <td scope="row">ryan@gmail.com</td>
+                        <td>
+                            <p id="ryanBankBalance">100000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">8</td>
+                        <td scope="row">Jon Snow</td>
+                        <td scope="row">jon@gmail.com</td>
+                        <td>
+                            <p id="jonBankBalance">140000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">9</td>
+                        <td scope="row">Emma Mackay</td>
+                        <td scope="row">emma@gmail.com</td>
+                        <td>
+                            <p id="emmaBankBalance">60000</p>
+                        </td>
+                    </tr>
+                    <tr class="table-light">
+                        <td scope="row">10</td>
+                        <td scope="row">John Cena</td>
+                        <td scope="row">ucantcme@gmail.com</td>
+                        <td>
+                            <p id="ucantcmeBankBalance">80000</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js"></script>
+    <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js"></script>
+</body>
+</html>
